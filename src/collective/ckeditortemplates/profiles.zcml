@@ -15,7 +15,7 @@
   <genericsetup:registerProfile
       zcml:condition="not-have plone-5"
       name="default"
-      title="collective.ckeditortemplates installation"
+      title="collective.ckeditortemplates"
       directory="profiles/plone4"
       description="Installs the collective.ckeditortemplates package for Plone 4"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -24,9 +24,18 @@
   <genericsetup:registerProfile
       zcml:condition="have plone-60"
       name="default"
-      title="collective.ckeditortemplates installation"
+      title="collective.ckeditortemplates"
       directory="profiles/plone6"
       description="Installs the collective.ckeditortemplates package for Plone 6"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      zcml:condition="have plone-60"
+      title="collective.ckeditortemplates uninstall"
+      directory="profiles/uninstall"
+      description="collective.ckeditortemplates"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
